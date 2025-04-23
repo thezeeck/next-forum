@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS posts;
 DROP TABLE IF EXISTS topics;
 DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS users;
-
+DROP TABLE IF EXISTS forum_config;
 DROP TYPE IF EXISTS user_status;
 DROP TYPE IF EXISTS user_role;
 DROP TYPE IF EXISTS moderation_action_type;
@@ -140,6 +140,16 @@ CREATE TABLE moderation_actions (
     FOREIGN KEY (target_post_id)
         REFERENCES posts(post_id)
         ON DELETE SET NULL
+);
+
+CREATE TABLE forum_config (
+    forum_name VARCHAR(255) NOT NULL,
+    forum_description TEXT NOT NULL,
+    forum_admin_email VARCHAR(255) NOT NULL,
+    forum_lang VARCHAR(255) NOT NULL,
+    forum_theme VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Índices para optimización

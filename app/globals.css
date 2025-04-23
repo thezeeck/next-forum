@@ -1,12 +1,62 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /** Base colors */
+  --clr-dark-0: #000000;
+  --clr-light-0: #ffffff;
+
+  /** Theme primary colors */
+  --clr-primary-0: #f7781e;
+  --clr-primary-10: #eb7a2e;
+  --clr-primary-20: #df7c3a;
+  --clr-primary-30: #d37d46;
+  --clr-primary-40: #c77e50;
+  --clr-primary-50: #ba7f5a;
+
+  /** Theme surface colors */
+  --clr-surface-0: #ffffff;
+  --clr-surface-10: #f0f0f0;
+  --clr-surface-20: #e1e1e1;
+  --clr-surface-30: #d3d3d3;
+  --clr-surface-40: #c5c5c5;
+  --clr-surface-50: #b6b6b6;
+
+  /** Theme tonal surface colors */
+  --clr-surface-tonal-0: #fff2e8;
+  --clr-surface-tonal-10: #f0e5dc;
+  --clr-surface-tonal-20: #e1d8d0;
+  --clr-surface-tonal-30: #d3cbc4;
+  --clr-surface-tonal-40: #c5beb8;
+  --clr-surface-tonal-50: #b7b1ad;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /** Base colors */
+    --clr-dark-0: #000000;
+    --clr-light-0: #ffffff;
+
+    /** Theme primary colors */
+    --clr-primary-0: #f7781e;
+    --clr-primary-10: #fb883b;
+    --clr-primary-20: #ff9754;
+    --clr-primary-30: #ffa66c;
+    --clr-primary-40: #ffb584;
+    --clr-primary-50: #ffc49c;
+
+    /** Theme surface colors */
+    --clr-surface-0: #121212;
+    --clr-surface-10: #282828;
+    --clr-surface-20: #3f3f3f;
+    --clr-surface-30: #575757;
+    --clr-surface-40: #717171;
+    --clr-surface-50: #8b8b8b;
+
+    /** Theme tonal surface colors */
+    --clr-surface-tonal-0: #271c15;
+    --clr-surface-tonal-10: #3c312a;
+    --clr-surface-tonal-20: #524741;
+    --clr-surface-tonal-30: #685f59;
+    --clr-surface-tonal-40: #807772;
+    --clr-surface-tonal-50: #98918d;
   }
 }
 
@@ -17,8 +67,7 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--surface-0);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,12 +80,11 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: var(--clr-primary-0);
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
+  /* html {
     color-scheme: dark;
-  }
+  } */
 }

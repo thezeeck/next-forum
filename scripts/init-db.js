@@ -16,7 +16,7 @@ const run = async () => {
         host: DB_HOST,
         database: DB_DATABASE,
         password: DB_PASSWORD,
-        port: 5432,
+        port: DB_PORT,
       });
     await rootClient.connect();
     console.log('✅ Connected to Postgres server');
@@ -40,11 +40,12 @@ const run = async () => {
     await rootClient.end();
 
     const dbClient = new Client({
-      host: DB_HOST,
-      port: DB_PORT,
+      connectionString: DB_URL,
       user: DB_USER,
+      host: DB_HOST,
+      database: DB_DATABASE,
       password: DB_PASSWORD,
-      database: DB_DATABASE
+      port: DB_PORT,
     });
 
     await dbClient.connect();
