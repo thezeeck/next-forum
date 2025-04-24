@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { getForumConfig } from "@/lib/getConfig";
 import { SetInitialConfiguration } from "./initialConfiguration/SetInitialConfiguration";
+import { FaviconComponent } from "./components/Favicon";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,11 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const config = await getForumConfig();
-
   return (
     <html lang="en">
+      <head>
+        <FaviconComponent />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {config ?
           children :

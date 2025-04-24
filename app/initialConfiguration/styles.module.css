@@ -4,10 +4,46 @@
   justify-content: center;
   flex-direction: column;
   height: 100dvh;
-  background-image: linear-gradient(-45deg, var(--primary-10) 0%, var(--primary-20) 100%);;
 }
 
 .initial_config__container {
   padding: 2rem;
-  max-width: 30rem;
+  max-width: 60rem;
+  width: 100%;
+}
+
+.initial_config_list {
+  list-style: none;
+  padding: 0;
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.initial_config_list > li {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.initial_config_list > li label {
+  width: 100%;
+}
+
+@media screen and (width >= 768px) {
+  .initial_config_list > li {
+    flex-direction: row;
+    gap: .5rem;
+  }
+
+  .initial_config_list > li label {
+    text-align: right;
+  }
+}
+
+.initial_config_list > .initial_config_buttons {
+  justify-content: end;
+  flex-direction: row;
 }

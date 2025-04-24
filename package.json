@@ -1,6 +1,12 @@
 {
-  "name": "next-forum",
+  "name": "nexus-forum",
   "version": "0.1.0",
+  "license": "CC BY-SA 4.0",
+  "author": {
+    "email": "thezeeck@yahoo.com.mx",
+    "name": "Juan Pedro Sánchez Miranda",
+    "url": "https://www.linkedin.com/in/juan-pedro-s%C3%A1nchez-miranda-1287b23b/"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
