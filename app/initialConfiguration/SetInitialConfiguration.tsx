@@ -4,6 +4,7 @@ import Form from 'next/form';
 import { saveInitialConfiguration } from './actions'; 
 import { useActionState } from 'react';
 import styles from './styles.module.css';
+import Image from 'next/image';
 
 export const SetInitialConfiguration = () => {
 	const [state, action, pending] = useActionState(saveInitialConfiguration, undefined);
@@ -11,6 +12,9 @@ export const SetInitialConfiguration = () => {
 	return (
 		<main className={styles.initial_config}>
 			<section className={styles.initial_config__container}>
+				<figure className={styles.initial_config__fox}>
+					<Image className={styles.initial_config__fox_image} src="/logo.png" height={250} width={250} alt='Nexus fox' />
+				</figure>
 				<h1>Welcome to Next forum</h1>
 				<p>We need some information about your project before start.</p>
 				<Form action={action}>
@@ -53,6 +57,18 @@ export const SetInitialConfiguration = () => {
 							</select>
 							{state?.errors?.theme && (
 								<span>{state.errors.theme}</span>
+							)}
+						</li>
+					</ul>
+					<hr />
+					<h2>Forum logo (optional)</h2>
+					<p>Upload a logo for your forum.</p>
+					<ul className={styles.initial_config_list}>
+						<li>
+							<label htmlFor="logo">Logo:</label>
+							<input type="file" name="logo" id="logo" accept=".png, .jpg, .jpeg" />
+							{state?.errors?.logo && (
+								<span>{state.errors.logo}</span>
 							)}
 						</li>
 					</ul>

@@ -132,6 +132,10 @@ textarea {
   width: 100%;
 }
 
+textarea {
+  resize: none;
+}
+
 select {
   appearance: none;
   border: .125rem solid var(--clr-surface-20);

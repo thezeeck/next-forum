@@ -29,6 +29,7 @@ export const InitialConfigurationSchema = z.object({
     .transform(val => sanitizeInput.email(val)),
   user_password_confirmation: z.string().max(250)
     .transform(val => sanitizeInput.email(val)),
+  logo: z.string().max(250),
 })
   .refine((data) => data.user_password === data.user_password_confirmation, {
     message: "Passwords don't match",
@@ -47,6 +48,7 @@ export type InitialConfigurationFormState = undefined |
       user_email?: string[];
       user_password?: string[];
       user_password_confirmation?: string[];
+      logo?: string[];
     };
     message?: string;
   }
@@ -61,4 +63,5 @@ export interface InitialFormData {
   user_email: string;
   user_password: string;
   user_password_confirmation: string;
+  logo: string | undefined;
 }

@@ -10,23 +10,20 @@ export async function saveInitialConfiguration(state: InitialConfigurationFormSt
     admin_email: formData.get('admin_email'),
     lang: formData.get('lang'),
     theme: formData.get('theme'),
+    logo: formData.get('logo'),
   });
 
   if (!validationResult.success) {
+    const errors = validationResult.error.flatten().fieldErrors;
+
+    if (!errors.logo) errors.logo = undefined;
+
     return {
-      errors: validationResult.error.flatten().fieldErrors,
+      errors,
     }
   }
 
-  const response = await setForumConfig(validationResult.data as InitialFormData);
+  await setForumConfig(validationResult.data as InitialFormData);
 
-
-
-  console.log('response', response);
-  
-  // const data = {
-  //   name: na
-  // }
-
-  redirect(`/`)
+  redirect(`/`);
 }
